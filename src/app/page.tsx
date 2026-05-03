@@ -42,9 +42,10 @@ export default function HomePage() {
 function Header() {
   return (
     <header className="sticky top-0 z-40 bg-[var(--color-paper)]/85 backdrop-blur-md border-b border-[var(--color-line-soft)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[76px]">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 flex items-center justify-between h-[64px] md:h-[76px]">
         <a href="#top" className="flex items-center">
-          <Logo size={38} />
+          <span className="md:hidden"><Logo size={32} /></span>
+          <span className="hidden md:inline-flex"><Logo size={38} /></span>
         </a>
         <nav className="hidden md:flex items-center gap-8 font-serif text-[15px] text-[var(--color-navy)]/70">
           {[
@@ -70,6 +71,13 @@ function Header() {
         >
           Talk on WhatsApp
         </WhatsAppButton>
+        {/* Mobile compact CTA */}
+        <a
+          href="#lead-form"
+          className="md:hidden inline-flex items-center gap-1.5 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] uppercase bg-[var(--color-navy)] text-white border border-[var(--color-gold)]/40"
+        >
+          Free plan
+        </a>
       </div>
     </header>
   );
@@ -105,13 +113,13 @@ function Hero() {
         aria-hidden="true"
       />
       <ArchPattern />
-      <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-24 pb-32 md:pt-32 md:pb-40">
+      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 pt-16 pb-24 md:pt-32 md:pb-40">
         {/* Dossier metadata strip */}
-        <div className="reveal flex items-center gap-4 text-[var(--color-gold-soft)] mb-12">
+        <div className="reveal flex flex-wrap items-center gap-x-3 gap-y-2 md:gap-4 text-[var(--color-gold-soft)] mb-10 md:mb-12">
           <span className="label-caps-tight">Edubros / Dossier</span>
-          <span className="h-px w-10 bg-[var(--color-gold)]/50" />
+          <span className="hidden sm:inline h-px w-6 md:w-10 bg-[var(--color-gold)]/50" />
           <span className="label-caps-tight">Ancona · Italia</span>
-          <span className="h-px w-10 bg-[var(--color-gold)]/50" />
+          <span className="hidden sm:inline h-px w-6 md:w-10 bg-[var(--color-gold)]/50" />
           <span className="label-caps-tight">MMXXVI</span>
         </div>
 
@@ -125,12 +133,12 @@ function Hero() {
           </div>
           <div className="lg:col-span-4 lg:pb-3">
             <div className="reveal reveal-2 max-w-md">
-              <p className="text-[17px] text-white/75 leading-[1.7] mb-2">
+              <p className="text-[16px] md:text-[17px] text-white/75 leading-[1.65] md:leading-[1.7] mb-2">
                 Edubros guides international students into Italian universities
                 at Bachelor&apos;s, Master&apos;s and PhD level. From
                 application strategy to your student visa.
               </p>
-              <p className="label-caps-tight text-[var(--color-gold-soft)] mt-6 flex items-center gap-3">
+              <p className="label-caps-tight text-[var(--color-gold-soft)] mt-5 md:mt-6 flex items-center gap-3">
                 <span className="h-px w-6 bg-[var(--color-gold)]/60" />
                 Based in Ancona, on the Adriatic coast
               </p>
@@ -138,18 +146,18 @@ function Hero() {
           </div>
         </div>
 
-        <div className="reveal reveal-3 mt-16 flex flex-col sm:flex-row gap-4">
-          <WhatsAppButton message={heroIntro} className="inline-flex btn-base btn-gold">
+        <div className="reveal reveal-3 mt-10 md:mt-16 flex flex-col sm:flex-row gap-3 md:gap-4">
+          <WhatsAppButton message={heroIntro} className="inline-flex btn-base btn-gold w-full sm:w-auto">
             <WhatsAppGlyph />
             Free consultation on WhatsApp
           </WhatsAppButton>
-          <a href="#lead-form" className="inline-flex btn-base btn-ghost-light">
+          <a href="#lead-form" className="inline-flex btn-base btn-ghost-light w-full sm:w-auto">
             Get a study plan
           </a>
         </div>
 
         {/* Hero footer / scroll cue */}
-        <div className="reveal reveal-4 mt-24 flex items-center justify-between text-[var(--color-gold-soft)]">
+        <div className="reveal reveal-4 mt-14 md:mt-24 flex items-center justify-between text-[var(--color-gold-soft)] pr-20 md:pr-0">
           <span className="label-caps-tight">N° 01 / Welcome</span>
           <span className="hidden md:flex items-center gap-3 label-caps-tight">
             <span>Scroll to begin</span>
@@ -203,7 +211,7 @@ function ArchPattern() {
 
 function SectionDivider() {
   return (
-    <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
       <div className="divider-fleur text-[var(--color-gold)]">
         <Fleur size={20} />
       </div>
@@ -222,7 +230,7 @@ function TrustStrip() {
   ];
   return (
     <section className="bg-[var(--color-paper)] border-y border-[var(--color-line-soft)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
         {items.map((label, i) => (
           <div key={label} className="flex items-center gap-10">
             {i > 0 ? (
@@ -270,10 +278,10 @@ function WhyItaly() {
     },
   ];
   return (
-    <section id="why-italy" className="py-24 md:py-32 bg-[var(--color-paper)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <section id="why-italy" className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper)]">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <SectionEyebrow eyebrow="N° 02 · The destination" />
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-16">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-10 md:mb-16">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             Why Italy{" "}
             <span className="italic text-[var(--color-gold)]">earns</span> a
@@ -286,31 +294,26 @@ function WhyItaly() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {cards.map((c) => (
             <article
               key={c.title}
-              className="card p-9 md:p-11 min-h-[280px] flex flex-col"
+              className="card p-7 md:p-11 min-h-[240px] md:min-h-[280px] flex flex-col overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-8 relative">
+              <div className="flex items-start justify-between mb-7 md:mb-8 relative">
                 <span className="label-caps-tight text-[var(--color-gold)] relative z-10">
                   {c.n}
                 </span>
                 <span
-                  className="card-mark"
-                  style={{
-                    fontSize: "150px",
-                    right: "12px",
-                    top: "-10px",
-                  }}
+                  className="card-mark text-[96px] md:text-[150px] right-2 md:right-3 top-[-6px] md:top-[-10px]"
                 >
                   {c.n}
                 </span>
               </div>
-              <h3 className="font-serif text-[28px] leading-tight text-[var(--color-navy)] mb-4 relative z-10">
+              <h3 className="font-serif text-[24px] md:text-[28px] leading-tight text-[var(--color-navy)] mb-3 md:mb-4 relative z-10">
                 {c.title}
               </h3>
-              <p className="text-[var(--color-muted)] leading-relaxed text-[15.5px] relative z-10">
+              <p className="text-[var(--color-muted)] leading-relaxed text-[15px] md:text-[15.5px] relative z-10">
                 {c.body}
               </p>
             </article>
@@ -338,11 +341,11 @@ function CountryComparison() {
   return (
     <section
       id="side-by-side"
-      className="py-24 md:py-32 bg-[var(--color-paper-warm)] border-t border-[var(--color-line-soft)]"
+      className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper-warm)] border-t border-[var(--color-line-soft)]"
     >
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <SectionEyebrow eyebrow="N° 03 · Side by side" />
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-12">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-8 md:mb-12">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             Italy vs the{" "}
             <span className="italic text-[var(--color-gold)]">usual</span>{" "}
@@ -532,11 +535,11 @@ function Programs() {
   return (
     <section
       id="programs"
-      className="py-24 md:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
+      className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
     >
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <SectionEyebrow eyebrow="N° 06 · The work" />
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-16">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-10 md:mb-16">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             Programs we{" "}
             <span className="italic text-[var(--color-gold)]">support</span>.
@@ -546,22 +549,22 @@ function Programs() {
             the visa that gets you there.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {programs.map((p, i) => (
             <article
               key={p.level}
-              className="card p-7 flex flex-col h-full"
+              className="card p-6 md:p-7 flex flex-col h-full"
             >
-              <div className="flex items-start justify-between mb-7">
+              <div className="flex items-start justify-between mb-6 md:mb-7">
                 <span className="text-[var(--color-gold)]">{p.icon}</span>
                 <span className="label-caps-tight text-[var(--color-muted-soft)]">
                   0{i + 1}
                 </span>
               </div>
-              <h3 className="font-serif text-[26px] leading-tight text-[var(--color-navy)] mb-3">
+              <h3 className="font-serif text-[24px] md:text-[26px] leading-tight text-[var(--color-navy)] mb-3">
                 {p.level}
               </h3>
-              <p className="text-[var(--color-muted)] leading-relaxed text-[15px] mb-6">
+              <p className="text-[var(--color-muted)] leading-relaxed text-[15px] mb-5 md:mb-6">
                 {p.blurb}
               </p>
               <ul className="text-[14px] text-[var(--color-muted-soft)] space-y-2 mt-auto pt-5 border-t border-[var(--color-line-soft)]">
@@ -668,11 +671,11 @@ function Cities() {
   return (
     <section
       id="cities"
-      className="py-24 md:py-32 bg-[var(--color-paper)] border-t border-[var(--color-line-soft)]"
+      className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper)] border-t border-[var(--color-line-soft)]"
     >
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <SectionEyebrow eyebrow="N° 04 · Italian cities" />
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-16">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-10 md:mb-16">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             Where you might{" "}
             <span className="italic text-[var(--color-gold)]">end up</span>.
@@ -684,7 +687,7 @@ function Cities() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {cities.map((c, i) => {
             const photoId =
               photos.cities[c.name.toLowerCase() as keyof typeof photos.cities];
@@ -724,7 +727,7 @@ function Cities() {
                     </span>
                   </div>
                 </div>
-                <div className="p-7 flex flex-col flex-1">
+                <div className="p-6 md:p-7 flex flex-col flex-1">
                   <p className="text-[var(--color-muted)] leading-relaxed text-[15px] mb-5">
                     {c.note}
                   </p>
@@ -755,7 +758,7 @@ function UniversitiesWall() {
   return (
     <section
       id="universities"
-      className="py-24 md:py-32 bg-[var(--color-navy)] text-white relative overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 bg-[var(--color-navy)] text-white relative overflow-hidden"
     >
       {/* subtle paper grain on navy */}
       <div
@@ -766,7 +769,7 @@ function UniversitiesWall() {
           mixBlendMode: "overlay",
         }}
       />
-      <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <div className="text-center mb-12">
           <span className="inline-block text-[var(--color-gold)] mb-4">
             <Fleur size={18} />
@@ -775,7 +778,7 @@ function UniversitiesWall() {
             N° 05 · The universities
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-10 md:mb-14">
           <h2 className="display-2 lg:col-span-7">
             Where{" "}
             <span className="italic text-[var(--color-gold)]">our students</span>{" "}
@@ -788,26 +791,26 @@ function UniversitiesWall() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/10">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/10">
           {universities.map((u) => (
             <li
               key={u.short}
-              className="bg-[var(--color-navy)] p-7 flex flex-col gap-4 group transition-colors hover:bg-[var(--color-navy-veil)]"
+              className="bg-[var(--color-navy)] p-5 sm:p-6 md:p-7 flex flex-col gap-3 md:gap-4 group transition-colors hover:bg-[var(--color-navy-veil)]"
             >
               <UniversityCrest />
               <div>
-                <p className="font-serif text-[19px] leading-tight">
+                <p className="font-serif text-[18px] md:text-[19px] leading-tight">
                   {u.name}
                 </p>
                 <p className="font-serif italic text-[var(--color-gold-soft)] text-[13px] mt-1">
                   {u.short}
                 </p>
               </div>
-              <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-                <span className="label-caps-tight text-white/55">
+              <div className="mt-auto pt-3 md:pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                <span className="label-caps-tight text-white/55 truncate">
                   {u.field}
                 </span>
-                <span className="font-serif italic text-[var(--color-gold)] text-[13px]">
+                <span className="font-serif italic text-[var(--color-gold)] text-[13px] shrink-0">
                   {u.founded}
                 </span>
               </div>
@@ -896,10 +899,10 @@ function Process() {
     },
   ];
   return (
-    <section id="process" className="py-24 md:py-32 bg-[var(--color-paper)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <section id="process" className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper)]">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <SectionEyebrow eyebrow="N° 07 · The process" />
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-20">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-8 md:mb-12 md:mb-20">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             How we{" "}
             <span className="italic text-[var(--color-gold)]">work</span>{" "}
@@ -945,7 +948,7 @@ function Manifesto() {
   return (
     <section className="bg-[var(--color-navy)] text-white relative overflow-hidden">
       <div className="absolute inset-0 hero-grain paper-grain pointer-events-none" />
-      <div className="relative max-w-[1100px] mx-auto px-6 lg:px-10 py-24 md:py-32 text-center">
+      <div className="relative max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-24 lg:py-32 text-center">
         <span className="text-[var(--color-gold)] inline-block mb-8">
           <Fleur size={28} />
         </span>
@@ -971,12 +974,12 @@ function LeadFormSection() {
   return (
     <section
       id="lead-form"
-      className="relative py-24 md:py-32 bg-[var(--color-navy-deep)] text-white overflow-hidden"
+      className="relative py-16 md:py-24 lg:py-32 bg-[var(--color-navy-deep)] text-white overflow-hidden"
     >
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[var(--color-gold)]/[0.07] rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[var(--color-gold)]/[0.04] rounded-full blur-3xl pointer-events-none" />
       <ArchPattern />
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 relative">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-10 relative">
         <div className="text-center mb-12">
           <span className="text-[var(--color-gold)] inline-block mb-6">
             <Fleur size={22} />
@@ -996,7 +999,7 @@ function LeadFormSection() {
             profile and reply on WhatsApp within 48 hours, no obligation.
           </p>
         </div>
-        <div className="bg-white/[0.025] border border-[var(--color-gold)]/15 p-8 md:p-12 backdrop-blur-sm">
+        <div className="bg-white/[0.025] border border-[var(--color-gold)]/15 p-6 sm:p-8 md:p-12 backdrop-blur-sm">
           <LeadForm />
         </div>
       </div>
@@ -1008,8 +1011,8 @@ function LeadFormSection() {
 
 function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-[var(--color-paper)]">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <section id="about" className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper)]">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="md:col-span-5 flex justify-center md:justify-start">
             <AboutPhoto />
@@ -1116,11 +1119,11 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-24 md:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
+      className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
     >
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <SectionEyebrow eyebrow="N° 10 · From students" />
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-12">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-8 md:mb-12">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             What students{" "}
             <span className="italic text-[var(--color-gold)]">say</span>.
@@ -1280,10 +1283,10 @@ function FAQ() {
   return (
     <section
       id="faq"
-      className="py-24 md:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
+      className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
     >
       <FaqLd items={faqs} />
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-10">
           <div className="lg:col-span-4">
             <SectionEyebrow eyebrow="N° 11 · FAQ" align="left" />
@@ -1326,8 +1329,8 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-paper)] relative overflow-hidden">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center relative">
+    <section className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper)] relative overflow-hidden">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-10 text-center relative">
         <span className="text-[var(--color-gold)] inline-block mb-6">
           <Fleur size={26} />
         </span>
@@ -1358,7 +1361,7 @@ function Footer() {
   return (
     <footer className="bg-[var(--color-navy-deep)] text-white relative overflow-hidden">
       <div className="absolute inset-0 hero-grain paper-grain pointer-events-none" />
-      <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-20 pb-10">
+      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-5">
             <Logo variant="white" size={44} />

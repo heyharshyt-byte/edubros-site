@@ -26,6 +26,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
+  overflow-x: hidden;
 }
 
 ::selection {
