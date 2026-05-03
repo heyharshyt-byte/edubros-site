@@ -84,21 +84,14 @@ export const metadata: Metadata = {
     title: `${site.name} · Study in Italy`,
     description:
       "Bachelor's, Master's, PhD and student visa support for international students applying to Italian universities. Based in Ancona.",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: `${site.name} — Study in Italy`,
-      },
-    ],
+    // Image is provided by app/opengraph-image.tsx (file convention)
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} · Study in Italy`,
     description:
       "Bachelor's, Master's, PhD and student visa support for international students applying to Italian universities.",
-    images: ["/og.jpg"],
+    // Image is provided by app/twitter-image.tsx (file convention)
   },
   icons: {
     icon: [

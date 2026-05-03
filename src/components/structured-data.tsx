@@ -17,7 +17,7 @@ export function OrganizationLd() {
     legalName: site.name,
     url: site.url,
     logo: `${site.url}/icon.svg`,
-    image: `${site.url}/og.jpg`,
+    image: `${site.url}/opengraph-image`,
     email: site.email,
     telephone: `+${site.whatsappNumber}`,
     description: site.about.short,
