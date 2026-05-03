@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Edubros — Study in Italy website
 
-## Getting Started
+Lead-capture site for Edubros, the education-abroad consultancy in Ancona that helps international students apply to Italian universities.
 
-First, run the development server:
+Built with Next.js 16 (App Router), Tailwind CSS v4, Newsreader (serif) and Inter (sans).
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3001>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where everything lives
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/lib/site.ts` — single source of truth for phone, email, Instagram, address, founder bio. Edit here to change globally.
+- `src/app/page.tsx` — homepage. Each section is a function (`Hero`, `WhyItaly`, `Programs`, `Process`, `LeadFormSection`, `Founder`, `FAQ`, `FinalCTA`, `Footer`). Copy lives inline.
+- `src/components/lead-form.tsx` — the lead form. On submit it builds a WhatsApp message and opens `wa.me/393513438159` with it pre-filled.
+- `src/components/whatsapp-button.tsx` — reusable WhatsApp link + the floating bottom-right pill.
+- `src/components/logo.tsx` — Edubros wordmark + cap badge SVG.
+- `src/app/globals.css` — colors (navy, gold, paper) and typography tokens.
 
-## Learn More
+## What's still missing
 
-To learn more about Next.js, take a look at the following resources:
+1. **Real photography** — the hero is a navy gradient with an arch pattern; no photos anywhere. Photos of Italy (Ancona/Marche), Italian universities, and your students will lift the whole site. Drop them into `public/` and reference them.
+2. **Success stories** — section is intentionally not built. Once you have 3 real testimonials (name, university, program, 1–2 sentence quote, photo), we'll add it.
+3. **Real email** — `edubros@gmail.com` is in `site.ts` as a placeholder. Confirm or replace.
+4. **Analytics** — no tracking yet. Add Vercel Analytics or Plausible when you deploy.
+5. **OG image** — favicon is the Next.js default. Replace `src/app/favicon.ico` and add an OG image at `src/app/opengraph-image.png` (1200×630).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub, then import the repo at <https://vercel.com/new>. Set no env vars. Click deploy. Done.
