@@ -19,6 +19,12 @@ export const site = {
     handle: "@edubros.in",
     url: "https://www.instagram.com/edubros.in/",
   },
+  community: {
+    name: "Edubros Discussions",
+    url: "https://chat.whatsapp.com/Eo1aOMwD1kwGlEE0CeTdmQ",
+    blurb:
+      "An open WhatsApp group where applicants and current students compare notes — TOLC dates, ISEE confusion, housing tips, visa interviews. We answer too.",
+  },
   about: {
     bio: "Edubros is based in Ancona, on the Adriatic coast, close to the universities, the embassies, and the people who actually move the paperwork. We work with international students through every step of the Italian higher-education and visa journey, with a focus on outcomes over promises.",
     short:

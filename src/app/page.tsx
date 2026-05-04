@@ -28,6 +28,7 @@ export default function HomePage() {
         <LeadFormSection />
         <About />
         <Testimonials />
+        <Community />
         <FAQ />
         <FinalCTA />
       </main>
@@ -47,13 +48,14 @@ function Header() {
           <span className="md:hidden"><Logo size={32} /></span>
           <span className="hidden md:inline-flex"><Logo size={38} /></span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 font-serif text-[15px] text-[var(--color-navy)]/70">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-8 font-serif text-[14px] lg:text-[15px] text-[var(--color-navy)]/70">
           {[
             ["Why Italy", "#why-italy"],
             ["Compare", "#side-by-side"],
             ["Cities", "#cities"],
             ["Universities", "#universities"],
             ["Programs", "#programs"],
+            ["Community", "#community"],
             ["FAQ", "#faq"],
           ].map(([label, href]) => (
             <a
@@ -1227,6 +1229,204 @@ function EmptyTestimonialsCard() {
   );
 }
 
+/* -------------------- Community -------------------- */
+
+function Community() {
+  return (
+    <section
+      id="community"
+      className="relative py-16 md:py-24 lg:py-32 bg-[var(--color-navy)] text-white overflow-hidden"
+    >
+      {/* paper grain on navy */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.18]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.4 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>\")",
+          mixBlendMode: "overlay",
+        }}
+        aria-hidden="true"
+      />
+      {/* Soft gold radial */}
+      <div
+        className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(200,154,58,0.10) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Copy column */}
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3 mb-6 text-[var(--color-gold-soft)]">
+              <span className="text-[var(--color-gold)]">
+                <Fleur size={14} />
+              </span>
+              <span className="label-caps">N° 11 · Community</span>
+            </div>
+            <h2 className="display-2 mb-6">
+              Talk to students who&apos;ve already{" "}
+              <span className="italic text-[var(--color-gold-soft)]">
+                made the move
+              </span>
+              .
+            </h2>
+            <p className="text-white/70 leading-relaxed text-[16px] md:text-[17px] max-w-xl mb-8">
+              {site.community.blurb}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <a
+                href={site.community.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex btn-base btn-gold w-full sm:w-auto"
+              >
+                <WhatsAppGlyph />
+                Join Edubros Discussions
+              </a>
+              <a
+                href="#lead-form"
+                className="inline-flex btn-base btn-ghost-light w-full sm:w-auto"
+              >
+                Book a 1-on-1 instead
+              </a>
+            </div>
+            <p className="label-caps-tight text-white/40 mt-6 flex items-center gap-3">
+              <span className="h-px w-6 bg-[var(--color-gold)]/60" />
+              Free WhatsApp group · No registration · Leave any time
+            </p>
+          </div>
+
+          {/* Visual column — chat preview */}
+          <div className="lg:col-span-5">
+            <CommunityPreview />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CommunityPreview() {
+  // Stylised, non-attributed sample of the kind of conversation that happens
+  // in the group. Keep messages generic so they don't read as quotes from
+  // specific (real or invented) students.
+  const messages: Array<{
+    from: string;
+    initials: string;
+    side: "left" | "right";
+    text: string;
+    accent?: boolean;
+  }> = [
+    {
+      from: "Applicant · Jaipur",
+      initials: "RM",
+      side: "left",
+      text: "Anyone took TOLC-I from home? Did the proctoring actually work?",
+    },
+    {
+      from: "Bologna · 2nd year",
+      initials: "AS",
+      side: "right",
+      text: "Yeah did mine in March. Get an ethernet cable, they fail you on bad wifi.",
+    },
+    {
+      from: "Edubros",
+      initials: "EB",
+      side: "left",
+      text: "And book the slot 6 weeks out — popular dates fill in 48 hrs.",
+      accent: true,
+    },
+    {
+      from: "Applicant · Pune",
+      initials: "TI",
+      side: "right",
+      text: "Got my visa appointment for Mumbai 🇮🇹 finally",
+    },
+  ];
+
+  return (
+    <div className="relative">
+      {/* Phone-ish frame */}
+      <div className="relative bg-[#101d3f] border border-[var(--color-gold)]/25 p-5 md:p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
+        {/* Header strip */}
+        <div className="flex items-center gap-3 pb-4 mb-4 border-b border-white/10">
+          <div className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+            <svg
+              viewBox="0 0 24 24"
+              className="w-4 h-4 fill-white"
+              aria-hidden="true"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.04 2C6.526 2 2.06 6.466 2.06 11.978c0 1.882.522 3.737 1.518 5.382L2 22l4.755-1.55c1.575.86 3.348 1.314 5.16 1.314h.005c5.514 0 9.978-4.466 9.978-9.978 0-2.667-1.038-5.173-2.926-7.06A9.928 9.928 0 0 0 12.04 2z" />
+            </svg>
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-serif text-[17px] leading-tight truncate">
+              {site.community.name}
+            </p>
+            <p className="label-caps-tight text-white/45 mt-1">
+              WhatsApp group · 200+ members
+            </p>
+          </div>
+        </div>
+
+        {/* Messages */}
+        <ul className="space-y-3.5">
+          {messages.map((m, i) => (
+            <li
+              key={i}
+              className={`flex gap-3 ${m.side === "right" ? "flex-row-reverse" : ""}`}
+            >
+              <div
+                className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center text-[11px] font-serif italic ${
+                  m.accent
+                    ? "bg-[var(--color-gold)] text-[var(--color-navy)]"
+                    : "bg-white/10 text-white/80"
+                }`}
+              >
+                {m.initials}
+              </div>
+              <div
+                className={`max-w-[80%] ${m.side === "right" ? "text-right" : ""}`}
+              >
+                <p
+                  className={`label-caps-tight mb-1 ${m.accent ? "text-[var(--color-gold-soft)]" : "text-white/45"}`}
+                >
+                  {m.from}
+                </p>
+                <p
+                  className={`inline-block px-4 py-2.5 text-[14px] leading-[1.45] ${
+                    m.accent
+                      ? "bg-[var(--color-gold)]/15 border border-[var(--color-gold)]/30 text-white"
+                      : m.side === "right"
+                        ? "bg-white/[0.06] text-white/90"
+                        : "bg-white/[0.04] text-white/80"
+                  }`}
+                >
+                  {m.text}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {/* Footer hint */}
+        <p className="mt-5 pt-4 border-t border-white/10 label-caps-tight text-white/40 text-center">
+          Sample conversation · Edubros replies in gold
+        </p>
+      </div>
+
+      {/* Decorative ornament */}
+      <div className="absolute -top-5 -left-5 text-[var(--color-gold)]/55 hidden md:block">
+        <Fleur size={22} />
+      </div>
+    </div>
+  );
+}
+
 /* -------------------- FAQ -------------------- */
 
 function FAQ() {
@@ -1289,7 +1489,7 @@ function FAQ() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-10">
           <div className="lg:col-span-4">
-            <SectionEyebrow eyebrow="N° 11 · FAQ" align="left" />
+            <SectionEyebrow eyebrow="N° 12 · FAQ" align="left" />
             <h2 className="display-2 text-[var(--color-navy)] mt-6 mb-6">
               Common{" "}
               <span className="italic text-[var(--color-gold)]">questions</span>.
@@ -1335,7 +1535,7 @@ function FinalCTA() {
           <Fleur size={26} />
         </span>
         <span className="label-caps text-[var(--color-gold)] mb-5 block">
-          N° 12 · Ready to start
+          N° 13 · Ready to start
         </span>
         <h2 className="display-2 text-[var(--color-navy)] mb-7">
           Let&apos;s talk about your future in{" "}
@@ -1410,6 +1610,16 @@ function Footer() {
                   className="gold-underline hover:text-white transition-colors"
                 >
                   Instagram {site.instagram.handle}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.community.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gold-underline hover:text-white transition-colors"
+                >
+                  Student WhatsApp group
                 </a>
               </li>
             </ul>

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "#lead-form",
     "#about",
     "#testimonials",
+    "#community",
     "#faq",
   ];
   return sections.map((s) => ({
