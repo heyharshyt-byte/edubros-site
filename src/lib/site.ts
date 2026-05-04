@@ -6,7 +6,7 @@ export const site = {
   foundedYear: 2023,
   whatsappNumber: "393513438159",
   phoneDisplay: "+39 351 343 8159",
-  email: "edubros@gmail.com",
+  email: "edubros.in@gmail.com",
   address: {
     street: "Piazza Roma",
     city: "Ancona",
