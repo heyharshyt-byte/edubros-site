@@ -35,7 +35,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Anika Shah",
     location: "Ahmedabad, India",
-    program: "Bachelor's, Università di Bologna · 2027",
+    program: "Bachelor's, Università di Bologna · 2025",
     quote:
       "I was stuck between three Italian universities. The Edubros team put everything on a single sheet (fees, TOLC dates, deadlines, housing) and I picked Bologna in one call. They even helped me find a flatmate before I landed.",
     initials: "AS",
@@ -62,7 +62,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Vivaan Reddy",
     location: "Hyderabad, India",
-    program: "Master's, Politecnica delle Marche · 2027",
+    program: "Master's, Politecnica delle Marche · 2025",
     quote:
       "Picked Ancona because Edubros is here and they handled things in person. Lower cost of living than Milan, English-taught Master's at UnivPM, and they helped me set up my bank account the day I got my codice fiscale.",
     initials: "VR",
@@ -80,7 +80,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Kabir Patel",
     location: "Surat, India",
-    program: "Bachelor's, Università di Firenze · 2027",
+    program: "Bachelor's, Università di Firenze · 2025",
     quote:
       "First in my family to apply abroad, so I had no clue. The Edubros team explained the whole DSU and ISEE flow in plain English. My Florence tuition came down from €4,500 to €700 a year because of it.",
     initials: "KP",
@@ -98,7 +98,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Arjun Verma",
     location: "Lucknow, India",
-    program: "PhD, Politecnico di Torino · 2027",
+    program: "PhD, Politecnico di Torino · 2025",
     quote:
       "Italian PhDs are funded, but the application is bureaucratic. Edubros helped me match with a research group, draft the proposal in the right format, and follow up with the supervisor. The contract came through three months later.",
     initials: "AV",
