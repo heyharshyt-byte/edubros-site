@@ -97,6 +97,32 @@ export default function ApplicationPrivacyPage() {
             .
           </p>
         </section>
+        <section id="web-analytics">
+          <h2 className="mb-3 font-serif text-2xl text-navy">
+            Website analytics
+          </h2>
+          <p>
+            We use Vercel Web Analytics to understand visits to our public pages,
+            including page views, referring sites, device types and approximate
+            locations. These reports help us improve the website. We do not send
+            your application answers, contact details or request references as
+            analytics events. Our integration removes query strings and URL
+            fragments from the page URLs it reports.
+          </p>
+          <p className="mt-3">
+            Vercel describes this service as using aggregated statistics without
+            third-party cookies. Read the{" "}
+            <a
+              href="https://vercel.com/docs/analytics/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-navy underline"
+            >
+              Vercel Web Analytics privacy information
+            </a>
+            .
+          </p>
+        </section>
         <section>
           <h2 className="mb-3 font-serif text-2xl text-navy">
             Documents and WhatsApp

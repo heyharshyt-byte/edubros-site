@@ -36,6 +36,15 @@ There is no application database or durable retry queue. Requests are delivered 
 
 ## Verification and deployment
 
+Vercel Web Analytics is integrated site-wide through a client-only, deferred
+`SiteAnalytics` component. Its project dashboard is
+https://vercel.com/heyharshyt-bytes-projects/edubros-site/analytics.
+Only page views for `/`, `/applynow` and `/applynow/privacy` are allowed. Query
+strings and fragments are removed, and custom events are rejected; application
+answers and request references are not sent. Add future public paths deliberately
+in `src/lib/analytics.ts`. UTM query-parameter reporting is intentionally omitted.
+No paid analytics upgrade or Speed Insights subscription is configured by this integration.
+
 Run `npm test`, `npm run lint`, `npm run build` and `npm audit`.
 
 Browser QA: desktop, 320/375px phones and landscape; validation and focus; Back/Edit retaining answers; all-No leaving €50; opt-ins increasing/decreasing by €10; shortlisting; consent; provider failure retaining answers; and success showing a reference. Confirm a real owner-inbox email separately.

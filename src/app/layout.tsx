@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { SiteAnalytics } from "@/components/site-analytics";
 import {
   OrganizationLd,
   WebsiteLd,
@@ -116,6 +117,7 @@ export default function RootLayout({
         <WebsiteLd />
         <ServicesLd />
         {children}
+        <SiteAnalytics />
       </body>
     </html>
   );
