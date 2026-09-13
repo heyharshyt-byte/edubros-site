@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const sections = [
     "",
+    "applynow",
     "#why-italy",
     "#side-by-side",
     "#cities",

@@ -48,7 +48,7 @@ function Header() {
           <span className="md:hidden"><Logo size={32} /></span>
           <span className="hidden md:inline-flex"><Logo size={38} /></span>
         </a>
-        <nav className="hidden md:flex items-center gap-7 lg:gap-8 font-serif text-[14px] lg:text-[15px] text-[var(--color-navy)]/70">
+        <nav className="hidden xl:flex items-center gap-6 font-serif text-[14px] text-[var(--color-navy)]/70">
           {[
             ["Why Italy", "#why-italy"],
             ["Compare", "#side-by-side"],
@@ -67,18 +67,11 @@ function Header() {
             </a>
           ))}
         </nav>
-        <WhatsAppButton
-          message={heroIntro}
-          className="hidden md:inline-flex btn-base btn-navy"
-        >
-          Talk on WhatsApp
-        </WhatsAppButton>
-        {/* Mobile compact CTA */}
         <a
-          href="#lead-form"
-          className="md:hidden inline-flex items-center gap-1.5 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] uppercase bg-[var(--color-navy)] text-white border border-[var(--color-gold)]/40"
+          href="/applynow"
+          className="inline-flex min-h-11 items-center justify-center gap-2 px-4 py-3 text-xs font-semibold tracking-[0.08em] uppercase bg-[var(--color-navy)] text-white border border-[var(--color-gold)]/40 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
         >
-          Free plan
+          Apply now <span aria-hidden="true">↗</span>
         </a>
       </div>
     </header>
@@ -1584,6 +1577,7 @@ function Footer() {
               Talk to us
             </h4>
             <ul className="space-y-2.5 text-[14px] text-white/65">
+              <li><a href="/applynow" className="gold-underline hover:text-white transition-colors">Apply to a university</a></li>
               <li>
                 <a
                   href={whatsappLink(heroIntro)}
