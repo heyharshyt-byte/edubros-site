@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "#programs",
     "#process",
     "#lead-form",
-    "#about",
     "#testimonials",
     "#community",
     "#faq",

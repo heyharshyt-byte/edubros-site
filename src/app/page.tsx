@@ -28,7 +28,6 @@ export default function HomePage() {
         <Process />
         <Manifesto />
         <LeadFormSection />
-        <About />
         <Testimonials />
         <InstagramStories />
         <Community />
@@ -1005,104 +1004,6 @@ function LeadFormSection() {
   );
 }
 
-/* -------------------- About -------------------- */
-
-function About() {
-  return (
-    <section id="about" className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper)]">
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-center">
-          <div className="md:col-span-5 flex justify-center md:justify-start">
-            <AboutPhoto />
-          </div>
-          <div className="md:col-span-7">
-            <SectionEyebrow eyebrow="N° 09 · About us" />
-            <h2 className="display-2 text-[var(--color-navy)] mt-6 mb-7">
-              Built in{" "}
-              <span className="italic text-[var(--color-gold)]">Ancona</span>,
-              run by people who&apos;ve done this.
-            </h2>
-            <p className="text-[var(--color-muted)] leading-relaxed text-lg mb-8 max-w-xl">
-              {site.about.bio}
-            </p>
-            <div className="flex flex-wrap gap-x-10 gap-y-4">
-              <a
-                href={site.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="label-caps text-[var(--color-navy)] gold-underline"
-              >
-                Instagram {site.instagram.handle}
-              </a>
-              <a
-                href={whatsappLink(heroIntro)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="label-caps text-[var(--color-navy)] gold-underline"
-              >
-                WhatsApp {site.phoneDisplay}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AboutPhoto() {
-  return (
-    <div className="relative w-full max-w-[420px]">
-      {/* Photo frame */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-navy)] border border-[var(--color-gold)]/30">
-        {/* Photo */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${unsplash(photos.about, 900, 75)})`,
-          }}
-        />
-        {/* Edge tint for depth + legibility */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(7,16,42,0.05) 0%, rgba(7,16,42,0.0) 35%, rgba(7,16,42,0.55) 100%)",
-          }}
-        />
-        {/* Top-left serial */}
-        <span className="absolute top-5 left-5 label-caps-tight text-[var(--color-gold-soft)]">
-          MMXXVI
-        </span>
-        {/* Top-right coords */}
-        <span className="absolute top-5 right-5 label-caps-tight text-white/70">
-          43° 37′ N
-        </span>
-        {/* Bottom plate */}
-        <div className="absolute bottom-5 left-5 right-5">
-          <p className="font-serif italic text-[var(--color-gold-soft)] text-[14px] leading-none mb-1">
-            Riviera del Conero
-          </p>
-          <p className="font-serif text-white text-[22px] leading-none">
-            Marche, Italia
-          </p>
-        </div>
-      </div>
-      {/* Gold badge under the photo */}
-      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[var(--color-gold)] text-[var(--color-navy)] label-caps px-5 py-2.5 whitespace-nowrap">
-        Based in Ancona
-      </div>
-      {/* Decorative ornaments */}
-      <div className="absolute -top-6 -right-6 text-[var(--color-gold)]/60">
-        <Fleur size={22} />
-      </div>
-      <div className="absolute -top-6 -left-6 text-[var(--color-gold)]/60 hidden md:block">
-        <Fleur size={22} />
-      </div>
-    </div>
-  );
-}
-
 /* -------------------- Testimonials -------------------- */
 
 function Testimonials() {
@@ -1120,7 +1021,7 @@ function Testimonials() {
       className="py-16 md:py-24 lg:py-32 bg-[var(--color-paper-warm)] border-y border-[var(--color-line-soft)]"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
-        <SectionEyebrow eyebrow="N° 10 · From students" />
+        <SectionEyebrow eyebrow="N° 09 · From students" />
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-4 items-end mb-8 md:mb-12">
           <h2 className="display-2 text-[var(--color-navy)] lg:col-span-7">
             What students{" "}
@@ -1261,7 +1162,7 @@ function Community() {
               <span className="text-[var(--color-gold)]">
                 <Fleur size={14} />
               </span>
-              <span className="label-caps">N° 11 · Community</span>
+              <span className="label-caps">N° 10 · Community</span>
             </div>
             <h2 className="display-2 mb-6">
               Talk to students who&apos;ve already{" "}
@@ -1485,7 +1386,7 @@ function FAQ() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-10">
           <div className="lg:col-span-4">
-            <SectionEyebrow eyebrow="N° 12 · FAQ" align="left" />
+            <SectionEyebrow eyebrow="N° 11 · FAQ" align="left" />
             <h2 className="display-2 text-[var(--color-navy)] mt-6 mb-6">
               Common{" "}
               <span className="italic text-[var(--color-gold)]">questions</span>.
@@ -1531,7 +1432,7 @@ function FinalCTA() {
           <Fleur size={26} />
         </span>
         <span className="label-caps text-[var(--color-gold)] mb-5 block">
-          N° 13 · Ready to start
+          N° 12 · Ready to start
         </span>
         <h2 className="display-2 text-[var(--color-navy)] mb-7">
           Let&apos;s talk about your future in{" "}

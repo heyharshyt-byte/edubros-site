@@ -5,7 +5,6 @@
  */
 export const photos = {
   hero: "1523365154888-8a758819b722", // Mediterranean coast, atmospheric
-  about: "1587993720549-1aaa2992cdf0", // Conero coast (Marche, near Ancona)
   cities: {
     ancona: "1538513238982-676810e65b3b", // harbor with ferry at sunset
     bologna: "1666200094966-52254d810577", // Palazzo Re Enzo, Piazza Maggiore
