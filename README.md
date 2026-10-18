@@ -34,6 +34,37 @@ There is no application database or durable retry queue. Requests are delivered 
 - `src/app/api/applications/route.ts`: server-only POST route.
 - `tests/application.test.ts`: mocked-email regression tests.
 
+## Instagram reels and student stories
+
+The homepage includes `#instagram-reels` after Why Italy and `#student-stories`
+after Testimonials. The approved selection is maintained in `src/lib/instagram.ts`.
+The view counts are a manually verified snapshot dated 18 October 2026, not a
+live Instagram feed. Refresh counts and the displayed date together. Future
+intake dates in admissions reels are not student-placement dates.
+
+`public/media/instagram/` contains the ten owner-approved source thumbnails,
+including the visa posts' existing redactions, unchanged. Next Image serves
+responsive optimized copies. Do not replace local assets with expiring signed
+Instagram CDN URLs. Check student permission and document privacy before adding
+new posts; the owner requested that this selection retain its existing artwork.
+
+The two carousels support touch scrolling, previous/next buttons, pause/resume,
+keyboard controls, hover/focus suspension and reduced-motion preferences.
+Filtering to a row that fits on screen disables scrolling controls. Motion stops
+offscreen, while a player is open, or when the browser is hidden. Original cards
+are keyboard accessible; loop copies are excluded from the accessibility tree.
+
+No Instagram iframe or script loads on initial page render. Selecting a post
+opens an on-demand native-dialog Instagram embed with an always-available link
+to the original post. Closing unmounts the player and restores focus. Instagram
+can require login or block embeds; this remains outside our control. The nearby
+media notice links to the privacy explanation. There are no new analytics events.
+
+For updates, check all assets and canonical source URLs, mobile widths from
+320px upward, filters, pause, arrow navigation, keyboard/focus, reduced motion,
+and a working reel player. Run the regression tests and production build before
+pushing to the connected Vercel deployment.
+
 ## Verification and deployment
 
 Vercel Web Analytics is integrated site-wide through a client-only, deferred

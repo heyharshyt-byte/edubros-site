@@ -123,6 +123,21 @@ export default function ApplicationPrivacyPage() {
             .
           </p>
         </section>
+        <section id="instagram-media">
+          <h2 className="mb-3 font-serif text-2xl text-navy">Instagram media on our website</h2>
+          <p>
+            The homepage uses locally hosted previews of selected Edubros posts.
+            The Instagram player is not loaded until you choose to open a post.
+            Opening a post connects your browser to Instagram, operated by Meta,
+            which receives information such as your IP address and browser details
+            and may use cookies or your existing Instagram sign-in. Close the
+            player to stop displaying the embed. You can browse the previews
+            without loading Instagram.
+          </p>
+          <p className="mt-3">
+            <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer" className="text-navy underline">Instagram privacy policy</a>
+          </p>
+        </section>
         <section>
           <h2 className="mb-3 font-serif text-2xl text-navy">
             Documents and WhatsApp

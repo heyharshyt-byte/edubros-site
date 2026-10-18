@@ -7,6 +7,7 @@ import { photos, unsplash } from "@/lib/photos";
 import { testimonials } from "@/lib/testimonials";
 import { comparison, comparisonNote } from "@/lib/comparison";
 import { universities } from "@/lib/universities";
+import { InstagramReels, InstagramStories } from "@/components/instagram-sections";
 
 const heroIntro =
   "Hi Edubros, I'd like a free consultation about studying in Italy.";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Hero />
         <TrustStrip />
         <WhyItaly />
+        <InstagramReels />
         <CountryComparison />
         <Cities />
         <UniversitiesWall />
@@ -28,6 +30,7 @@ export default function HomePage() {
         <LeadFormSection />
         <About />
         <Testimonials />
+        <InstagramStories />
         <Community />
         <FAQ />
         <FinalCTA />
